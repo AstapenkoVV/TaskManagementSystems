@@ -20,7 +20,7 @@ public class TaskController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Task> getTms(@PathVariable Long id) {
+    public ResponseEntity<Task> findById(@PathVariable Long id) {
         Optional<Task> tk = taskService.findById(id);
         if (tk.isPresent()) {
             return ResponseEntity.status(HttpStatus.OK).body(tk.get());
@@ -29,14 +29,15 @@ public class TaskController {
     }
 
     @GetMapping
-    public ResponseEntity<List<Task>> getAll() {
-        return ResponseEntity.ok(taskService.getAll());
+    public ResponseEntity<List<Task>> findAll() {
+        return ResponseEntity.status(HttpStatus.OK).body(taskService.findAll());
     }
 
     @PostMapping
     public ResponseEntity<Task> create(@RequestBody Task task) {
-        task = taskService.create(task);
-        return ResponseEntity.status(HttpStatus.CREATED).body(task);
+        final Task createdTask;
+        createdTask = taskService.create(task);
+        return ResponseEntity.status(HttpStatus.CREATED).body(createdTask);
     }
 
     @DeleteMapping("/{id}")

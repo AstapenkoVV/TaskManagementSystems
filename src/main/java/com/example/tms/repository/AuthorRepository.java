@@ -25,7 +25,7 @@ public class AuthorRepository {
     }
 
     public Author create(Author author) {
-//        author.setAuthorId(sequence);
+        author.setAuthorId(sequence++);
         authors.add(author);
         return author;
     }

@@ -6,13 +6,13 @@
     <title>Document</title>
 </head>
 <body>
-<h1>Задача № <span th:text="${taskId}"></span></h1>
-Название задачи: <span th:text="${taskName}"></span><br><br>
-Описание: <span th:text="${description}"></span><br><br>
-Статус: <span th:text="${status}"></span><br><br>
-Приоритет: <span th:text="${priority}"></span><br><br>
-Комментарий: <span th:text="${comment}"></span><br><br>
-Автор задачи: <span th:text="${authorName}"></span><br><br>
-Исполнитель: <span th:text="${executor}"></span>
+<h1>Задача № <span th:text="${task.getTaskId()}"></span></h1>
+Название задачи: <span th:text="${task.getTaskName()}"></span><br><br>
+Описание: <span th:text="${task.getDescription()}"></span><br><br>
+Статус: <span th:text="${task.getStatus()}"></span><br><br>
+Приоритет: <span th:text="${task.getPriority()}"></span><br><br>
+Комментарий: <span th:text="${task.getComment()}"></span><br><br>
+Автор задачи: <span th:text="${task.getAuthorName()}"></span><br><br>
+Исполнитель: <span th:text="${task.getExecutor()}"></span>
 </body>
 </html>

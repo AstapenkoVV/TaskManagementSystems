@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+</head>
+<body>
+<h1>Система управления задачами</h1>
+<table>
+    <thead>
+    <tr>
+        <th>  Заголовок  </th>
+        <th>  Описание  </th>
+        <th>  Статус  </th>
+        <th>  Приоритет  </th>
+        <th>  Комментарий  </th>
+        <th>  Исполнитель  </th>
+        <th>  Автор задачи  </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="task : ${tasks}">
+        <td><a th:href="@{'/home/tms/{id}'(id=${task.taskId})}"><span th:text="${task.taskName}"></span></a></td>
+        <td><span th:text="${task.description}"></span></td>
+        <td><span th:text="${task.status}"></span></td>
+        <td><span th:text="${task.priority}"></span></td>
+        <td><span th:text="${task.comment}"></span></td>
+        <td><span th:text="${task.executor}"></span></td>
+        <td><span th:text="${task.getAuthorName}"></span></td>
+        <td> </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

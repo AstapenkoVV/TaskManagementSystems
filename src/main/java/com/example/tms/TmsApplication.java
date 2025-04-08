@@ -30,8 +30,8 @@ public class TmsApplication {
 			Task task = new Task();
 
 			task.setTaskId((long) i);
-			task.setTaskName("task " + i);
-			task.setDescription("Description " + i);
+			task.setTaskName("Task " + i);
+			task.setDescription("description " + i);
 			task.setStatus("completed " + i);
 			task.setPriority("normal " + i);
 			task.setComment("comment " + i);

@@ -25,7 +25,7 @@ public class TaskRepository {
     }
 
     public Task create(Task task) {
-//        task.setTaskId(sequence);
+        task.setTaskId(sequence++);
         tasks.add(task);
         return task;
     }
